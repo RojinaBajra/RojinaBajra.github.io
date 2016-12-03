@@ -1,1 +1,174 @@
-asdsad
+<!DOCTYPE html>
+<html>
+<head>
+
+ 
+
+    <title> INSTALLING LARAVEL HOMESTEAD    </title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/portfolio.css">
+    <script src="jquery/index.jquery"></script>
+  
+   <script src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <bold style="font-size: medium;color: white;"><h2>INSTALLING LARAVEL HOMESTEAD- VAGRANT<h2></bold>
+            </div>
+
+
+
+        </div>
+
+
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+
+    <!-- portfolio grid starts here -->
+ <section id="portfolio">
+    <div class="container">
+
+    <div class="row" style="background-color: #85929E;box-shadow: 10px 10px 5px grey;">
+
+      <p>"WHY ITS HAPPENING IN YOUR MACHINE AND NOT MINE " is one of the talked issues in software development. Though the codes tend to be similar, individuals often face this problem of not getting the output desired as of the fellow friend who is working on the same code.Many of us deploy to systems which are completely different from the systems we develop on, and can be difficult to set up particularly if there are a lot of moving pieces in your setup. These could be things like message queuing systems, various databases or specific versions of scripting languages such as ruby. This makes it a very time intensive process to bring new people up to speed on your projects, and to get systems set up right the first time. What if you could have a system that would launch a virtual environment, provision and run all of your systems's various components, be repeatable and fit on a thumb drive? Vagrant allows this by putting a ruby DSL on top of Oracle's VirtualBox API. It allows you to set up and provision your servers using Chef or Puppet, and to reuse those scripts on your real production environment if you want. This makes your server infrastructure version controlled just like your application code. We will go through a setup of a Vagrant instance and show how using shared folders you can develop locally, but be developing on your "local cloud", your running Vagrant instance.</p><br>
+
+      <p>
+      We are going to use then Laravel homestead for vagrant instance. Laravel homestead is a full package virtual box that provides us a good provisioned environment to run our applications upto the development level . We dont need to get confused and be doubful on codes we write. Sometimes there occurs a chaos in two machines for same code we run . Then we waste our time fixing on where should be the problem then we keep on blaming the systems.Instead No more worrying about messing up your operating system!
+      Vagrant boxes are completely disposable. If something goes wrong, you can destroy and re-create the box in minutes!
+      Homestead runs on any Windows, Mac, or Linux system, and includes the Nginx web server, PHP 7.0, MySQL, Postgres, Redis, Memcached, Node, and all of the other goodies you need to develop amazing Laravel applications.</p>
+
+     </div> <br>
+
+      <img src="img/vagrant.jpg" style="align:center" class="img-responsive"></img></br>
+
+
+
+<div class="row" style="background-color: #EAECEE;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+
+
+        <p>Vagrant boxes are completely disposable. If something goes wrong, you can destroy and re-create the box in minutes!
+        Homestead runs on any Windows, Mac, or Linux system, and includes the Nginx web server, PHP 7.0, MySQL, Postgres, Redis, Memcached, Node, and all of the other goodies you need to develop amazing Laravel applications.</p>
+
+
+</div><br>
+
+<div class="row">
+
+        <strong>NOW WE WILL GO STEP BY STEP TO INSTALL A VAGRANT ENVIRONMENT PACKAGE DESIGNED ONLY FOR LARAVEL.</strong><br>
+
+        <p>Lets add a laravel homestead which has the softwares installed like COMPOSER, PHP , MYSQL, NGINX ETC. These are the minimum packages required to run a php application . Laravel Homestead comes with numerous other packages which we shall install later thoroughly.</p>
+
+
+        Before launching our homestead environment, we must have two pre installed softwares 
+        Virtual box <link rel="stylesheet" type="text/css" href="https://www.virtualbox.org/">
+        Vagrant <link rel="stylesheet" type="text/css" href="https://www.vagrantup.com/">
+Once VirtualBox / VMware and Vagrant have been installed, you should add the laravel/homesteadbox to your Vagrant installation using the following command in your terminal. It will take a few minutes to download the box, depending on your Internet connection speed:
+
+
+</div>.
+
+<div class="row">
+
+<p class="bg-info">1) Vagrant box add laravel/homestead</p>
+
+<p style="text-align: center;">This command  will build us a box named laravel/homestead where we will run our environment. For this, virtual box must be pre installed. Then this wil ask which kind of box we want to install either Virtual box or VMWare . 
+</p>
+
+</div>
+
+<div class="row">
+ <p class="bg-info">2) git clone https://github.com/laravel/homestead.git Homestead</p>
+ <p style="text-align: center"> This will populate/clone all the homestead requirements inside a folder named Homestead as declared in above command.
+ Then , change your directory to homestead (cd Homestead/) . Inside Homestead , we have a vagrant configuration file called <strong>vagrantfile</strong></p><br>
+
+ In order to initialise this vagrantfile , 
+ <p class="bg-info">3) bash init.sh</p>
+ <p style="text-align:center">This will initialise the homestead .  Initialising vagrant file is synonimous to initialising above vagrantfile.</p>
+
+</div>
+
+<div class="row">
+
+ <p>4) Open the Homestead.yaml file inside the homestead folder which was initialised just before.</p>
+
+homestead.yaml file looks like this
+
+<img style="height: 300px;width: 700px" class="img-responsive" src="img/steadyaml.png"><img><br>
+
+  <p>Generate your ssh key for machine from terminal with <text style="color: green">ssh-keygen</text>. In homestead.yaml , we have a section called authorise where we need to place our ssh key location.</p>
+
+  <p>In above file , we have ip as 192.168.10.10 which is our localhost address for our machine.We can also define the sites.Inside sites, there is a map, homestead.app which  means it is a domain where our application runs, we can change it per our wish.Inside , we place the path to the project
+  we are mapping .We can map various domains at once using multiple maps and multiple sites .
+
+  folder section in ablove file is synchronisation between  development environment and actual machine.<br>
+
+  Copy this IP address and open the hosts file located inside drivers of system32 .Then copy above IP address at the bottom of the hosts file then mention the site .</p><br>
+
+  <img style="height: 550px;width: 900px" class="img-responsive" src="img/homestead.jpg"><img><br>
+
+
+  <p>We can mention same IP for two different projects , above we have laravel.dev and homestead.dev .</p>
+   <p class="bg-info">192.168.10.10 laravel.dev</p>
+  <p class="bg-info"> 192.168.10.10 homestead.dev</p>
+
+
+
+</div>
+
+
+<div class="row">
+
+<p>Inside homestead folder, run <text style="color: green">vagrant up</text></p>
+
+<p> This will start our virtual box at the background.Each time, you start programming , you will have to run vagrant up inside the homestead environemnt.
+
+Then,
+
+Connect to development environment by <text style="color: green">vagrant ssh</text>
+
+Thus , we have entered into laravel homestead environment. Now we are ready to run our projects , which should be inside this environment.</p>
+</div>
+
+
+<div class="row">
+
+<p>We can now run your laravel project  !!! Yeaaahh!!!!</p>
+
+
+References:
+https://www.mediawiki.org/wiki/MediaWiki-Vagrant
+
+</div>
+
+
+
+
+
+
+    </div>
+
+    </div>
+    </div>
+        
+</section>
+</body>
+</html>     
+          
+            
